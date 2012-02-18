@@ -56,7 +56,7 @@ public class VideoRecording extends Activity {
 	public static final int MEDIA_TYPE_VIDEO = 2;
 
 	/** Create a file Uri for saving an image or video */
-	private static Uri getOutputMediaFileUri(int type) {
+	private Uri getOutputMediaFileUri(int type) {
 		return Uri.fromFile(getOutputMediaFile(type));
 	}
 

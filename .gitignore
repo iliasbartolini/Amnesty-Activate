@@ -1,0 +1,20 @@
+
+# common junk
+.DS_Store
+*~
+Thumbs.db
+
+# binary directory
+AmnestyActivate/bin/
+AmnestyActivateTest/bin/
+
+# android auto generated files directory
+AmnestyActivate/gen/
+AmnestyActivateTest/gen/
+
+# eclipse settings
+.settings/
+local.properties
+
+# build key and user/password
+*.keystore
