@@ -14,6 +14,7 @@ AmnestyActivateTest/gen/
 
 # eclipse settings
 .settings/
+.classpath
 local.properties
 
 # build key and user/password

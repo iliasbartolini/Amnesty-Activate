@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android" a:orientation="vertical" a:layout_width="fill_parent" a:layout_height="fill_parent" a:padding="10px" a:background="#000000">
-	<ImageView a:layout_width="fill_parent" a:layout_height="wrap_content" a:src="@drawable/amnesty_logo" a:adjustViewBounds="false" a:layout_gravity="top"/>
-	<TextView a:layout_width="fill_parent" a:textStyle="bold" a:textSize="20sp" a:layout_height="wrap_content" a:text="@string/hello" a:textColor="#ffff00"/>
-</LinearLayout>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+    a:orientation="vertical"
+    a:padding="10px" >
 
+    <ImageView
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_gravity="top"
+        a:adjustViewBounds="false"
+        a:src="@drawable/amnesty_logo" />
+
+    <ImageView
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_gravity="top"
+        a:layout_marginTop="20sp"
+        a:adjustViewBounds="false"
+        a:src="@drawable/activate_logo" />
+
+    <LinearLayout
+        xmlns:a="http://schemas.android.com/apk/res/android"
+        a:layout_width="fill_parent"
+        a:layout_height="fill_parent"
+        a:layout_gravity="center"
+        a:orientation="horizontal" >
+
+        <LinearLayout
+            xmlns:a="http://schemas.android.com/apk/res/android"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_gravity="center"
+            a:layout_weight="50"
+            a:orientation="vertical" >
+
+            <ImageButton
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent"
+                a:layout_weight="50"
+                a:scaleX="2"
+                a:scaleY="2"
+                a:background="#000"
+                a:layout_margin="20sp"
+                a:src="@drawable/video"/>
+
+            <TextView
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent"
+                a:layout_weight="50"
+                a:gravity="center"
+                a:padding="20sp"
+                a:text="Video"
+                a:textColor="#ffff00"
+                a:textSize="50sp"
+                a:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:a="http://schemas.android.com/apk/res/android"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_gravity="center"
+            a:layout_weight="50"
+            a:orientation="vertical" >
+
+            <ImageButton
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent"
+                a:layout_weight="50"
+                a:scaleX="2"
+                a:scaleY="2"
+                a:background="#000"
+                a:layout_margin="20sp"
+                a:src="@drawable/camera"/>
+
+            <TextView
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent"
+                a:layout_weight="50"
+                a:gravity="center"
+                a:padding="20sp"
+                a:text="Image"
+                a:textColor="#ffff00"
+                a:textSize="50sp"
+                a:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
