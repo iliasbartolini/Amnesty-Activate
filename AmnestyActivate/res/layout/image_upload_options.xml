@@ -22,9 +22,9 @@
     <LinearLayout
         a:layout_width="fill_parent"
         a:layout_height="fill_parent"
-        a:background="#a000"
+        a:background="#c000"
         a:orientation="vertical"
-        a:padding="50sp" >
+        a:padding="30sp" >
 
         <TextView
             a:layout_width="fill_parent"
