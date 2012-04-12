@@ -5,13 +5,13 @@
     a:orientation="vertical"
     a:padding="10px" >
 
-    <ImageView
+     <ImageView
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
         a:layout_gravity="top"
         a:adjustViewBounds="false"
         a:src="@drawable/amnesty_logo" />
-
+<!--
     <ImageView
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         a:layout_marginTop="20sp"
         a:adjustViewBounds="false"
         a:src="@drawable/activate_logo" />
-
+ -->
     <LinearLayout
         xmlns:a="http://schemas.android.com/apk/res/android"
         a:layout_width="fill_parent"
@@ -39,10 +39,9 @@
                 a:layout_width="fill_parent"
                 a:layout_height="fill_parent"
                 a:layout_weight="50"
-                a:scaleX="2"
-                a:scaleY="2"
                 a:background="#000"
                 a:layout_margin="20sp"
+                a:onClick="onStartVideoCapture"
                 a:src="@drawable/video"/>
 
             <TextView
@@ -50,10 +49,10 @@
                 a:layout_height="fill_parent"
                 a:layout_weight="50"
                 a:gravity="center"
-                a:padding="20sp"
+                a:padding="10sp"
                 a:text="Video"
                 a:textColor="#ffff00"
-                a:textSize="50sp"
+                a:textSize="30sp"
                 a:textStyle="bold" />
         </LinearLayout>
 
@@ -69,21 +68,20 @@
                 a:layout_width="fill_parent"
                 a:layout_height="fill_parent"
                 a:layout_weight="50"
-                a:scaleX="2"
-                a:scaleY="2"
                 a:background="#000"
                 a:layout_margin="20sp"
-                a:src="@drawable/camera"/>
+                a:src="@drawable/camera"
+                a:onClick="onStartImageCapture"/>
 
             <TextView
                 a:layout_width="fill_parent"
                 a:layout_height="fill_parent"
                 a:layout_weight="50"
                 a:gravity="center"
-                a:padding="20sp"
+                a:padding="10sp"
                 a:text="Image"
                 a:textColor="#ffff00"
-                a:textSize="50sp"
+                a:textSize="30sp"
                 a:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

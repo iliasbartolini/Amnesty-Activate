@@ -1,9 +1,7 @@
 package uk.org.amnesty.activate;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.io.IOException;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,42 +9,33 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 public class MediaRecording extends Activity {
 
-	private Uri fileUri;
-	
-
-	public static final int MEDIA_TYPE_IMAGE = 1;
-	public static final int MEDIA_TYPE_VIDEO = 2;
-
-
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
+	private Uri fileUri;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-
-		//startVideoCaptureIntent();
-
-		startImageCaptureIntent();
-	
+		setContentView(R.layout.main);	
 	}
 
-
-	private void startVideoCaptureIntent() {
+	
+	public void onStartVideoCapture(View v) {
 		Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 		fileUri = getOutputMediaFileUri("VID_", ".mp4");
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-		intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video image quality to high
+		intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
+		intent.putExtra(MediaStore.EXTRA_FINISH_ON_COMPLETION, true);
 		startActivityForResult(intent, CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
 	}
 
 
-	private void startImageCaptureIntent() {
+	public void onStartImageCapture(View v) {
 		// create new Intent
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		fileUri = getOutputMediaFileUri("IMG_", ".jpg");
@@ -58,11 +47,12 @@ public class MediaRecording extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (resultCode == RESULT_OK) {
-			String path = (data != null) ? data.getData().toString(): "";
 			if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-				Toast.makeText(this, "Image saved to:\n" + path, Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(this, HandleImageUpload.class);
+				intent.putExtra(HandleImageUpload.FILE_URI, fileUri.toString());
+				startActivity(intent);
 			} else if (requestCode == CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE) {
-				Toast.makeText(this, "Video saved to:\n" + path, Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "Video saved to:\n" + fileUri, Toast.LENGTH_LONG).show();
 			}
 		} else if (resultCode == RESULT_CANCELED) {
 			Toast.makeText(this, "Canceled", Toast.LENGTH_LONG).show();
@@ -78,15 +68,19 @@ public class MediaRecording extends Activity {
 		
 		if (!mediaStorageDir.exists()) {
 			if (!mediaStorageDir.mkdirs()) {
-				Log.d("MyCameraApp", "failed to create directory");
+				Log.d("MyCameraApp", "Failed to create directory");
 				throw new MediaStorageMkDirFailedException();
 			}
 		}
 		
-		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		String fileName = mediaStorageDir.getPath() + File.separator + filePrefix + timeStamp + fileExtension;
-
-		File mediaFile = new File(fileName);
+		File mediaFile;
+		try {
+			mediaFile = File.createTempFile(filePrefix, fileExtension, mediaStorageDir);
+			mediaFile.delete();
+		} catch (IOException e) {
+			Log.d("MyCameraApp", e.getStackTrace().toString());
+			throw new MediaStorageMkDirFailedException();
+		}
 		
 		return Uri.fromFile(mediaFile);
 	}
