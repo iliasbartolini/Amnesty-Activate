@@ -2,23 +2,29 @@
 <LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
     a:layout_width="fill_parent"
     a:layout_height="fill_parent"
-    a:orientation="vertical"
-    a:padding="10px" >
+    a:orientation="vertical">
 
     <ImageView
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
         a:layout_gravity="top"
+        a:layout_weight="1"
         a:adjustViewBounds="false"
         a:src="@drawable/amnesty_logo" />
     
     <ImageView
         a:id="@+id/image"
         a:layout_width="fill_parent"
-        a:layout_height="fill_parent"
+        a:layout_height="wrap_content"
         a:layout_gravity="top"
-        a:layout_marginTop="20sp"
-        a:adjustViewBounds="false"
-        a:src="@drawable/activate_logo" />
+        a:layout_weight="10"
+        a:adjustViewBounds="false" />
 
+    <ImageView
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_gravity="bottom"
+        a:adjustViewBounds="false"
+        a:layout_weight="1"
+        a:src="@drawable/activate_navigation_bar" />
 </LinearLayout>
