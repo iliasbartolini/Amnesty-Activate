@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HandleImageUpload" />
-
+        <activity android:name=".ImageUploadOptions" />
+        
         <supports-screens android:xlargeScreens="true" />
     </application>
 

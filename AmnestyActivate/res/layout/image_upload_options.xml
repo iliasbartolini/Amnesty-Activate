@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:id="@+id/gallerylayout"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent" >
+
+    <ImageView
+        a:id="@+id/image"
+        a:layout_width="fill_parent"
+        a:layout_height="fill_parent"
+        a:adjustViewBounds="false" />
+
+    <ImageView
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_alignBottom="@id/image"
+        a:adjustViewBounds="false"
+        a:background="#0000"
+        a:scaleType="fitXY"
+        a:src="@drawable/activate_navigation_bar" />
+
+    <LinearLayout
+        a:layout_width="fill_parent"
+        a:layout_height="fill_parent"
+        a:background="#a000"
+        a:orientation="vertical"
+        a:padding="50sp" >
+
+        <TextView
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_weight="1"
+            a:background="#0000" />
+
+        <TextView
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:background="#0000"
+            a:gravity="center"
+            a:padding="10sp"
+            a:text="Upload in progess..."
+            a:textColor="#ffff00"
+            a:textSize="20sp"
+            a:textStyle="bold" />
+
+        <ProgressBar
+            a:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_gravity="center"
+            a:max="30"
+            a:maxHeight="10sp"
+            a:minHeight="10sp"
+            a:progress="20" />
+
+        <TextView
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:background="#0000"
+            a:gravity="center"
+            a:padding="10sp"
+            a:text="6min left"
+            a:textColor="#ffffff"
+            a:textSize="15sp"
+            a:textStyle="bold" />
+
+        <TextView
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_marginTop="15sp"
+            a:background="#0000"
+            a:gravity="center"
+            a:padding="5sp"
+            a:text="Add description"
+            a:textColor="#ffff00"
+            a:textSize="20sp"
+            a:textStyle="bold" />
+
+        <RadioGroup
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:gravity="center" 
+            a:padding="5sp">
+
+            <RadioButton
+                a:gravity="center"
+                a:text="Testimony"
+                a:textColor="#ffffff"
+                a:textSize="18sp" />
+
+            <RadioButton
+                a:gravity="center"
+                a:text="Evidence"
+                a:textColor="#ffffff"
+                a:textSize="18sp" />
+        </RadioGroup>
+        <EditText
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:paddingLeft="80sp"
+            a:paddingRight="80sp"
+            a:lines="5" />
+        <Button 
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:gravity="center"
+            a:text="Update" 
+            />
+        		
+        <TextView
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:layout_weight="1"
+            a:background="#0000" />
+    </LinearLayout>
+
+</RelativeLayout>

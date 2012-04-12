@@ -10,12 +10,6 @@
         a:layout_height="fill_parent" 
         a:adjustViewBounds="false"
         />
-    <!--
-             a:layout_gravity="top"
-        a:layout_weight="10"
-        a:adjustViewBounds="false"
-    -->
-
     <ImageView
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
@@ -25,12 +19,6 @@
         a:scaleType="fitXY"
         a:src="@drawable/activate_navigation_bar" />
 
-    <!--
-             a:layout_gravity="bottom"
-        a:adjustViewBounds="false"
-        a:layout_weight="1"
-    -->
-
     <ImageButton
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
@@ -39,6 +27,7 @@
         a:background="#0000"
         a:scaleType="fitXY"
         a:scaleY="2"
-        a:src="@drawable/activate_upload_new" />
+        a:src="@drawable/activate_upload_new" 
+        a:onClick="onUpload"/>
 
 </RelativeLayout>
