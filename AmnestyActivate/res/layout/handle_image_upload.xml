@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:id="@+id/gallerylayout"
     a:layout_width="fill_parent"
-    a:layout_height="fill_parent"
-    a:orientation="vertical">
+    a:layout_height="fill_parent" >
 
-    <ImageView
-        a:layout_width="fill_parent"
-        a:layout_height="wrap_content"
-        a:layout_gravity="top"
-        a:layout_weight="1"
-        a:adjustViewBounds="false"
-        a:src="@drawable/amnesty_logo" />
-    
     <ImageView
         a:id="@+id/image"
         a:layout_width="fill_parent"
-        a:layout_height="wrap_content"
-        a:layout_gravity="top"
+        a:layout_height="fill_parent" 
+        a:adjustViewBounds="false"
+        />
+    <!--
+             a:layout_gravity="top"
         a:layout_weight="10"
-        a:adjustViewBounds="false" />
+        a:adjustViewBounds="false"
+    -->
 
     <ImageView
         a:layout_width="fill_parent"
         a:layout_height="wrap_content"
-        a:layout_gravity="bottom"
+        a:layout_alignBottom="@id/image"
+        a:adjustViewBounds="false"
+        a:background="#0000"
+        a:scaleType="fitXY"
+        a:src="@drawable/activate_navigation_bar" />
+
+    <!--
+             a:layout_gravity="bottom"
         a:adjustViewBounds="false"
         a:layout_weight="1"
-        a:src="@drawable/activate_navigation_bar" />
-</LinearLayout>
+    -->
+
+    <ImageButton
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_centerHorizontal="true"
+        a:layout_centerVertical="true"
+        a:background="#0000"
+        a:scaleType="fitXY"
+        a:scaleY="2"
+        a:src="@drawable/activate_upload_new" />
+
+</RelativeLayout>
